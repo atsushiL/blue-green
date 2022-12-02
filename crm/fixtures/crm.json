@@ -1,0 +1,1354 @@
+[
+    {
+        "model": "crm.User",
+        "pk": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116",
+        "fields": {
+            "username": "00000001",
+            "name": "テスト管理ユーザ01",
+            "password": "pbkdf2_sha256$390000$sYXKzhzYotYneF2hHTeW8D$OGhiETWYjUvvJzSFxWeFUDySKealVwrxbM2+fgJmcvo=",
+            "email": "test_management_one@gmail.com",
+            "role": 0,
+            "created_at": "2022-07-28T00:31:09.732Z",
+            "updated_at": "2022-07-28T00:31:09.732Z",
+            "mail_sent_at": "2022-07-28T00:31:09.732Z"
+        }
+    },
+    {
+        "model": "crm.User",
+        "pk": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3117",
+        "fields": {
+            "username": "00000002",
+            "name": "テスト一般ユーザ01",
+            "password": "pbkdf2_sha256$390000$sYXKzhzYotYneF2hHTeW8D$OGhiETWYjUvvJzSFxWeFUDySKealVwrxbM2+fgJmcvo=",
+            "email": "test_general_one@gmail.com",
+            "role": 1,
+            "created_at": "2022-07-28T00:31:09.732Z",
+            "updated_at": "2022-07-28T00:31:09.732Z",
+            "mail_sent_at": "2022-07-28T00:31:09.732Z"
+        }
+    },
+    {
+        "model": "crm.User",
+        "pk": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3118",
+        "fields": {
+            "username": "00000003",
+            "name": "テストセールスユーザ01",
+            "password": "pbkdf2_sha256$390000$sYXKzhzYotYneF2hHTeW8D$OGhiETWYjUvvJzSFxWeFUDySKealVwrxbM2+fgJmcvo=",
+            "email": "test_sales_one@gmail.com",
+            "role": 2,
+            "created_at": "2022-07-28T00:31:09.732Z",
+            "updated_at": "2022-07-28T00:31:09.732Z",
+            "mail_sent_at": "2022-07-28T00:31:09.732Z"
+        }
+    },
+    {
+        "model": "crm.Customer",
+        "pk": 1,
+        "fields": {
+            "entrance": 0,
+            "customer_status": 0,
+            "available": false,
+            "created_at": "2022-07-01T00:31:09.732Z",
+            "updated_at": "2022-07-01T00:31:09.732Z",
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116",
+            "updated_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116"
+        }
+    },
+    {
+        "model": "crm.Customer",
+        "pk": 2,
+        "fields": {
+            "entrance": 1,
+            "customer_status": 1,
+            "available": false,
+            "created_at": "2022-07-28T00:31:09.732Z",
+            "updated_at": "2022-07-28T00:31:09.732Z",
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116",
+            "updated_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116"
+        }
+    },
+    {
+        "model": "crm.CustomerData",
+        "pk": 1,
+        "fields": {
+            "customer": 1,
+            "name": "お客様01",
+            "kana": "オキャクサマゼロイチ",
+            "birthday": "2002-01-01",
+            "sex": 1,
+            "email": "customer01@gmail.com",
+            "memo": "test01 memo01",
+            "cellphone_no": "08011112222",
+            "phone_no": "0771112222",
+            "created_at": "2022-07-01T00:31:09.732Z",
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116"
+        }
+    },
+    {
+        "model": "crm.CustomerData",
+        "pk": 2,
+        "fields": {
+            "customer": 2,
+            "name": "お客様02",
+            "kana": "オキャクサマゼロ二",
+            "birthday": "1992-01-01",
+            "sex": 2,
+            "email": "customer02@gmail.com",
+            "memo": "test02 memo02",
+            "cellphone_no": "08022223333",
+            "phone_no": "0772223333",
+            "created_at": "2022-07-28T00:31:09.732Z",
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116"
+        }
+    },
+    {
+        "model": "crm.Address",
+        "pk": 1,
+        "fields": {
+            "customer": 1,
+            "estate": null,
+            "land": null,
+            "prefecture": "京都府",
+            "municipalities": "京都市下京区烏丸通五条上る高砂町",
+            "house_no": "381-1",
+            "post_no": "5200001",
+            "other": "",
+            "created_at": "2022-07-28T00:31:09.732Z"
+        }
+    },
+    {
+        "model": "crm.Address",
+        "pk": 2,
+        "fields": {
+            "customer": 2,
+            "estate": null,
+            "land": null,
+            "prefecture": "京都府",
+            "municipalities": "京都市南区上鳥羽鉾立町",
+            "house_no": "11-1",
+            "post_no": "5200002",
+            "other": "テストマンション101号室",
+            "created_at": "2022-07-28T00:31:09.732Z"
+        }
+    },
+    {
+        "model": "crm.Address",
+        "pk": 3,
+        "fields": {
+            "customer": null,
+            "estate": null,
+            "land": 1,
+            "prefecture": "京都府",
+            "municipalities": "京都市西京区",
+            "house_no": "11-1",
+            "post_no": "5200002",
+            "other": "テストマンション101号室",
+            "created_at": "2022-07-28T00:31:09.732Z"
+        }
+    },
+    {
+        "model": "crm.Address",
+        "pk": 4,
+        "fields": {
+            "customer": null,
+            "estate": 1,
+            "land": null,
+            "prefecture": "京都府",
+            "municipalities": "京都市南区久世中久世町",
+            "house_no": "11-1",
+            "post_no": "5200002",
+            "other": "テストマンション102号室",
+            "created_at": "2022-07-28T00:31:09.732Z"
+        }
+    },
+    {
+        "model": "crm.Contract",
+        "pk": 1,
+        "fields": {
+            "final_customer": 1,
+            "created_at": "2022-07-28T00:31:09.732Z"
+        }
+    },
+    {
+        "model": "crm.Contract",
+        "pk": 2,
+        "fields": {
+            "final_customer": 2,
+            "created_at": "2022-07-28T00:31:09.732Z"
+        }
+    },
+    {
+        "model": "crm.ContractData",
+        "pk": 1,
+        "fields": {
+            "contract": 1,
+            "contract_date": "2022-10-11",
+            "created_at": "2022-07-28T00:31:09.732Z"
+        }
+    },
+    {
+        "model": "crm.ContractData",
+        "pk": 2,
+        "fields": {
+            "contract": 2,
+            "contract_date": "2022-10-11",
+            "created_at": "2022-07-28T00:31:09.732Z"
+        }
+    },
+    {
+        "model": "crm.ProspectCustomer",
+        "pk": 1,
+        "fields": {
+            "customer": 1,
+            "created_at": "2022-07-01T00:31:09.732Z",
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116"
+        }
+    },
+    {
+        "model": "crm.ProspectCustomer",
+        "pk": 2,
+        "fields": {
+            "customer": 2,
+            "created_at": "2022-07-28T00:31:09.732Z",
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116"
+        }
+    },
+    {
+        "model": "crm.ProspectCustomerData",
+        "pk": 1,
+        "fields": {
+            "prospect_customer": 1,
+            "prefecture": "京都府",
+            "is_available": 1,
+            "created_at": "2022-07-01T00:31:09.732Z",
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116"
+        }
+    },
+    {
+        "model": "crm.ProspectCustomerData",
+        "pk": 2,
+        "fields": {
+            "prospect_customer": 2,
+            "prefecture": "東京都",
+            "is_available": 1,
+            "created_at": "2022-07-28T00:31:09.732Z",
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116"
+        }
+    },
+    {
+        "model": "crm.ProvisionalCustomer",
+        "pk": 1,
+        "fields": {
+            "customer": 1,
+            "introduction_company": 1,
+            "created_at": "2022-07-28T00:31:09.732Z",
+            "updated_at": "2022-07-28T00:31:09.732Z",
+            "updated_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116"
+        }
+    },
+    {
+        "model": "crm.ProvisionalCustomer",
+        "pk": 2,
+        "fields": {
+            "customer": 2,
+            "introduction_company": 2,
+            "created_at": "2022-07-28T00:31:09.732Z",
+            "updated_at": "2022-07-28T00:31:09.732Z",
+            "updated_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116"
+        }
+    },
+    {
+        "model": "crm.ProvisionalCustomerData",
+        "pk": 1,
+        "fields": {
+            "provisional_customer": 1,
+            "application_date": "2022-07-01",
+            "status": 1,
+            "approval": true,
+            "reason_for_refusal": "reason1",
+            "created_at": "2022-07-28T00:31:09.732Z",
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116"
+        }
+    },
+    {
+        "model": "crm.ProvisionalCustomerData",
+        "pk": 2,
+        "fields": {
+            "provisional_customer": 2,
+            "application_date": "2022-07-02",
+            "status": 2,
+            "approval": false,
+            "reason_for_refusal": "reason2",
+            "created_at": "2022-07-28T00:31:09.732Z",
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116"
+        }
+    },
+    {
+        "model": "crm.AntiSocialCheckResult",
+        "pk": 1,
+        "fields": {
+            "provisional_customer": 1,
+            "anti_social_check_status": 0,
+            "anti_social_result": 0,
+            "created_at": "2022-07-28T00:31:09.732Z",
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116"
+        }
+    },
+    {
+        "model": "crm.AntiSocialCheckResult",
+        "pk": 2,
+        "fields": {
+            "provisional_customer": 2,
+            "anti_social_check_status": 1,
+            "anti_social_result": 1,
+            "created_at": "2022-07-28T00:31:09.732Z",
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116"
+        }
+    },
+    {
+        "model": "crm.ApplicationInfo",
+        "pk": 1,
+        "fields": {
+            "provisional_customer": 1,
+            "preferred_purchase_fee": 3000,
+            "preferred_rent_fee": 60,
+            "how_to_know": "アイフルからの紹介",
+            "assumed_years_of_residence": 30,
+            "created_at": "2022-07-28T00:31:09.732Z",
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116"
+        }
+    },
+    {
+        "model": "crm.ApplicationInfo",
+        "pk": 2,
+        "fields": {
+            "provisional_customer": 2,
+            "preferred_purchase_fee": 1000,
+            "preferred_rent_fee": 40,
+            "how_to_know": "チラシ",
+            "assumed_years_of_residence": 20,
+            "created_at": "2022-07-28T00:31:09.732Z",
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116"
+        }
+    },
+    {
+        "model": "crm.FinalCustomer",
+        "pk": 1,
+        "fields": {
+            "customer": 1,
+            "created_at": "2022-07-28T00:31:09.732Z"
+        }
+    },
+    {
+        "model": "crm.FinalCustomer",
+        "pk": 2,
+        "fields": {
+            "customer": 2,
+            "created_at": "2022-07-28T00:31:09.732Z"
+        }
+    },
+    {
+        "model": "crm.FinalCustomerData",
+        "pk": 1,
+        "fields": {
+            "final_customer": 1,
+            "emergency_contact_kana": "キョウトシヤクショ",
+            "emergency_contact": "京都市役所",
+            "emergency_phone_no": "0752223111",
+            "requests": "リクエスト01",
+            "insurance_company": 1,
+            "guarantee_company": 1,
+            "created_at": "2022-07-28T00:31:09.732Z"
+        }
+    },
+    {
+        "model": "crm.FinalCustomerData",
+        "pk": 2,
+        "fields": {
+            "final_customer": 2,
+            "emergency_contact_kana": "オオサカシヤクショ",
+            "emergency_contact": "大阪市役所",
+            "emergency_phone_no": "0662088181",
+            "requests": "リクエスト02",
+            "insurance_company": 2,
+            "guarantee_company": 2,
+            "created_at": "2022-07-28T00:31:09.732Z"
+        }
+    },
+    {
+        "model": "crm.WorkplaceInfo",
+        "pk": 1,
+        "fields": {
+            "provisional_customer": 1,
+            "name": "勤務先01",
+            "phone_no": "0466360851",
+            "industry": "製造業",
+            "occupation": "営業",
+            "annual_income": 8000,
+            "created_at": "2022-07-28T00:31:09.732Z",
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116"
+        }
+    },
+    {
+        "model": "crm.WorkplaceInfo",
+        "pk": 2,
+        "fields": {
+            "provisional_customer": 2,
+            "name": "勤務先02",
+            "phone_no": "0466360852",
+            "industry": "金融",
+            "occupation": "営業",
+            "annual_income": 6000,
+            "created_at": "2022-07-28T00:31:09.732Z",
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116"
+        }
+    },
+    {
+        "model": "crm.PromotionMethod",
+        "pk": 1,
+        "fields": {
+            "method": "架電",
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116",
+            "created_at": "2022-07-28T00:31:09.732Z"
+        }
+    },
+    {
+        "model": "crm.PromotionMethod",
+        "pk": 2,
+        "fields": {
+            "method": "メール送信",
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116",
+            "created_at": "2022-07-28T00:31:09.732Z"
+        }
+    },
+    {
+        "model": "crm.PromotionResult",
+        "pk": 1,
+        "fields": {
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116",
+            "result": "コール",
+            "created_at": "2022-07-28T00:31:09.732Z"
+        }
+    },
+    {
+        "model": "crm.PromotionResult",
+        "pk": 2,
+        "fields": {
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116",
+            "result": "返信",
+            "created_at": "2022-07-28T00:31:09.732Z"
+        }
+    },
+    {
+        "model": "crm.CustomerNegotiationHistory",
+        "pk": 1,
+        "fields": {
+            "customer": 1,
+            "promotion_method": 1,
+            "result": 1,
+            "conversation": "交渉履歴01",
+            "negotiation_datetime": "2022-06-02T00:31:09.732Z",
+            "created_at": "2022-07-02T00:31:09.732Z",
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116",
+            "updated_at": "2022-07-02T00:31:09.732Z",
+            "updated_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116"
+        }
+    },
+    {
+        "model": "crm.CustomerNegotiationHistory",
+        "pk": 2,
+        "fields": {
+            "customer": 2,
+            "promotion_method": 2,
+            "result": 2,
+            "conversation": "交渉履歴02",
+            "negotiation_datetime": "2022-06-02T00:31:09.732Z",
+            "created_at": "2022-07-02T00:31:09.732Z",
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116",
+            "updated_at": "2022-07-02T00:31:09.732Z",
+            "updated_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116"
+        }
+    },
+    {
+        "model": "crm.InterviewItem",
+        "pk": 1,
+        "fields": {
+            "item": "test01",
+            "memo": "メモ01",
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116",
+            "created_at": "2022-07-28T00:31:09.732Z"
+        }
+    },
+    {
+        "model": "crm.InterviewItem",
+        "pk": 2,
+        "fields": {
+            "item": "test02",
+            "memo": "メモ02",
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116",
+            "created_at": "2022-07-28T00:31:09.732Z"
+        }
+    },
+    {
+        "model": "crm.Interview",
+        "pk": 1,
+        "fields": {
+            "interview_item": 1,
+            "provisional_customer": 1,
+            "interview_content": "テスト",
+            "created_at": "2022-07-28T00:31:09.732Z",
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116"
+        }
+    },
+    {
+        "model": "crm.Interview",
+        "pk": 2,
+        "fields": {
+            "interview_item": 2,
+            "provisional_customer": 2,
+            "interview_content": "テスト",
+            "created_at": "2022-07-28T00:31:09.732Z",
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116"
+        }
+    },
+    {
+        "model": "crm.Family",
+        "pk": 1,
+        "fields": {
+            "provisional_customer": 1,
+            "name": "テスト01",
+            "age": 20,
+            "job": "会社員",
+            "household_management": 0,
+            "consensus": 0,
+            "created_at": "2022-07-28T00:31:09.732Z",
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116"
+        }
+    },
+    {
+        "model": "crm.Family",
+        "pk": 2,
+        "fields": {
+            "provisional_customer": 2,
+            "name": "テスト02",
+            "age": 30,
+            "job": "公務員",
+            "household_management": 1,
+            "consensus": 1,
+            "created_at": "2022-07-28T00:31:09.732Z",
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116"
+        }
+    },
+    {
+        "model": "crm.Loan",
+        "pk": 1,
+        "fields": {
+            "provisional_customer": 1,
+            "remaining_housing_loan_debt": 1000,
+            "monthly_repayment": 50,
+            "bonus_month_repayment": 50,
+            "arrear": 0,
+            "created_at": "2022-07-28T00:31:09.732Z",
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116"
+        }
+    },
+    {
+        "model": "crm.Loan",
+        "pk": 2,
+        "fields": {
+            "provisional_customer": 2,
+            "remaining_housing_loan_debt": 1500,
+            "monthly_repayment": 40,
+            "bonus_month_repayment": 40,
+            "arrear": 100,
+            "created_at": "2022-07-28T00:31:09.732Z",
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116"
+        }
+    },
+    {
+        "model": "crm.BankAccount",
+        "pk": 1,
+        "fields": {
+            "provisional_customer": 1,
+            "number": "9432001",
+            "holder": "テスト01",
+            "account_type": 0,
+            "bank": "三井住友",
+            "branch": "京都",
+            "created_at": "2022-07-28T00:31:09.732Z",
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116"
+        }
+    },
+    {
+        "model": "crm.BankAccount",
+        "pk": 2,
+        "fields": {
+            "provisional_customer": 2,
+            "number": "9432002",
+            "holder": "テスト02",
+            "account_type": 1,
+            "bank": "三井住友",
+            "branch": "京都",
+            "created_at": "2022-07-28T00:31:09.732Z",
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116"
+        }
+    },
+    {
+        "model": "crm.Mail",
+        "pk": 1,
+        "fields": {
+            "customer": 1,
+            "subject": "件名01",
+            "send_datetime": "2022-07-28T00:31:09.732Z",
+            "category": "OK",
+            "message": "本文01"
+        }
+    },
+    {
+        "model": "crm.Mail",
+        "pk": 2,
+        "fields": {
+            "customer": 2,
+            "subject": "件名02",
+            "send_datetime": "2022-07-28T00:31:09.732Z",
+            "category": "NG",
+            "message": "本文02"
+        }
+    },
+    {
+        "model": "crm.Land",
+        "pk": 1,
+        "fields": {
+            "customer": 1,
+            "created_at": "2022-07-28T00:31:09.732Z",
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116"
+        }
+    },
+    {
+        "model": "crm.Land",
+        "pk": 2,
+        "fields": {
+            "customer": 2,
+            "created_at": "2022-07-28T00:31:09.732Z",
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116"
+        }
+    },
+    {
+        "model": "crm.LandData",
+        "pk": 1,
+        "fields": {
+            "land": 1,
+            "registered_size_square": 50.5,
+            "lot_no": "101-1",
+            "landmark": 0,
+            "holder": "テスト01",
+            "holder_type": 0,
+            "property_tax_pay_date": "2022-07-28",
+            "created_at": "2022-07-28T00:31:09.732Z",
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116"
+        }
+    },
+    {
+        "model": "crm.LandData",
+        "pk": 2,
+        "fields": {
+            "land": 2,
+            "registered_size_square": 40.5,
+            "lot_no": "101-2",
+            "landmark": 2,
+            "holder": "テスト02",
+            "holder_type": 1,
+            "property_tax_pay_date": "2022-07-28",
+            "created_at": "2022-07-28T00:31:09.732Z",
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116"
+        }
+    },
+    {
+        "model": "crm.LandCertificate",
+        "pk": 1,
+        "fields": {
+            "land": 1,
+            "photo": "test",
+            "created_at": "2022-07-28T00:31:09.732Z",
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116",
+            "updated_at": "2022-07-01T00:31:09.732Z",
+            "updated_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116"
+        }
+    },
+    {
+        "model": "crm.LandCertificate",
+        "pk": 2,
+        "fields": {
+            "land": 2,
+            "photo": "test",
+            "created_at": "2022-07-28T00:31:09.732Z",
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116",
+            "updated_at": "2022-07-01T00:31:09.732Z",
+            "updated_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116"
+        }
+    },
+    {
+        "model": "crm.LandPhoto",
+        "pk": 1,
+        "fields": {
+            "land": 1,
+            "photo": "test",
+            "memo": "メモ01",
+            "created_at": "2022-07-28T00:31:09.732Z"
+        }
+    },
+    {
+        "model": "crm.LandPhoto",
+        "pk": 2,
+        "fields": {
+            "land": 2,
+            "photo": "test",
+            "memo": "メモ02",
+            "created_at": "2022-07-28T00:31:09.732Z"
+        }
+    },
+    {
+        "model": "crm.GuaranteeCompany",
+        "pk": 1,
+        "fields": {
+            "name": "保証会社01",
+            "phone_no": "0566360851",
+            "created_at": "2022-07-28T00:31:09.732Z"
+        }
+    },
+    {
+        "model": "crm.GuaranteeCompany",
+        "pk": 2,
+        "fields": {
+            "name": "保証会社02",
+            "phone_no": "0566360852",
+            "created_at": "2022-07-28T00:31:09.732Z"
+        }
+    },
+    {
+        "model": "crm.Estate",
+        "pk": 1,
+        "fields": {
+            "customer": 1,
+            "introduction_company": 1,
+            "created_at": "2022-07-28T00:31:09.732Z",
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116",
+            "updated_at": "2022-07-28T00:31:09.732Z",
+            "updated_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116"
+        }
+    },
+    {
+        "model": "crm.Estate",
+        "pk": 2,
+        "fields": {
+            "customer": 2,
+            "introduction_company": 2,
+            "created_at": "2022-07-28T00:31:09.732Z",
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116",
+            "updated_at": "2022-07-28T00:31:09.732Z",
+            "updated_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116"
+        }
+    },
+    {
+        "model": "crm.BuildingInfo",
+        "pk": 1,
+        "fields": {
+            "estate": 1,
+            "category": 0,
+            "attachment_count": 0,
+            "mortgage_count": 0,
+            "reform": 0,
+            "footprint": 50.5,
+            "footprint_rate": 60.5,
+            "cancellation_fee": 600,
+            "management_fee": 50,
+            "age": 20,
+            "direction": "東南東",
+            "front_road": 50.5,
+            "nearest_station": "膳所",
+            "house_no": "101",
+            "holder": "テスト01",
+            "holder_type": 0,
+            "fire_insurance_fee": 15,
+            "fire_insurance_renewal_date": "2022-07-28T00:31:09.732Z",
+            "property_tax": 500,
+            "property_tax_pay_date": "2022-07-28T00:31:09.732Z",
+            "created_at": "2022-07-28T00:31:09.732Z",
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116"
+        }
+    },
+    {
+        "model": "crm.BuildingInfo",
+        "pk": 2,
+        "fields": {
+            "estate": 2,
+            "category": 1,
+            "attachment_count": 1,
+            "mortgage_count": 1,
+            "reform": 1,
+            "footprint": 60.5,
+            "footprint_rate": 70.5,
+            "cancellation_fee": 800,
+            "management_fee": 60,
+            "age": 30,
+            "direction": "南南西",
+            "front_road": 40.5,
+            "nearest_station": "石山",
+            "house_no": "201",
+            "holder": "テスト02",
+            "holder_type": 1,
+            "fire_insurance_fee": 20,
+            "fire_insurance_renewal_date": "2022-07-28T00:31:09.732Z",
+            "property_tax": 600,
+            "property_tax_pay_date": "2022-07-28T00:31:09.732Z",
+            "created_at": "2022-07-28T00:31:09.732Z",
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116"
+        }
+    },
+    {
+        "model": "crm.ManagementCompany",
+        "pk": 1,
+        "fields": {
+            "name": "管理会社01",
+            "phone_no": "0366360851"
+        }
+    },
+    {
+        "model": "crm.ManagementCompany",
+        "pk": 2,
+        "fields": {
+            "name": "管理会社02",
+            "phone_no": "0366360852"
+        }
+    },
+    {
+        "model": "crm.ManagementCompanyExpense",
+        "pk": 1,
+        "fields": {
+            "company": 1,
+            "estate": 1,
+            "consignment_fee": 50,
+            "union_fee": 50,
+            "deposit_fee": 50,
+            "renewal_fee": 50,
+            "created_at": "2022-07-28T00:31:09.732Z",
+            "updated_at": "2022-07-28T00:31:09.732Z"
+        }
+    },
+    {
+        "model": "crm.ManagementCompanyExpense",
+        "pk": 2,
+        "fields": {
+            "company": 2,
+            "estate": 2,
+            "consignment_fee": 40,
+            "union_fee": 40,
+            "deposit_fee": 40,
+            "renewal_fee": 40,
+            "created_at": "2022-07-28T00:31:09.732Z",
+            "updated_at": "2022-07-28T00:31:09.732Z"
+        }
+    },
+    {
+        "model": "crm.EstateCertificate",
+        "pk": 1,
+        "fields": {
+            "estate": 1,
+            "photo": "test",
+            "created_at": "2022-07-28T00:31:09.732Z"
+        }
+    },
+    {
+        "model": "crm.EstateCertificate",
+        "pk": 2,
+        "fields": {
+            "estate": 2,
+            "photo": "test",
+            "created_at": "2022-07-28T00:31:09.732Z"
+        }
+    },
+    {
+        "model": "crm.RentFee",
+        "pk": 1,
+        "fields": {
+            "estate": 1,
+            "final_customer": 1,
+            "fee": 50,
+            "payment": 0,
+            "payment_day": "2022-10-11",
+            "arrear": 0
+        }
+    },
+    {
+        "model": "crm.RentFee",
+        "pk": 2,
+        "fields": {
+            "estate": 2,
+            "final_customer": 2,
+            "fee": 40,
+            "payment": 1,
+            "payment_day": "2022-10-11",
+            "arrear": 0
+        }
+    },
+    {
+        "model": "crm.InsuranceCompany",
+        "pk": 1,
+        "fields": {
+            "estate": [
+                1,
+                2
+            ],
+            "name": "保険会社01",
+            "phone_no": "0666360851",
+            "created_at": "2022-07-28T00:31:09.732Z"
+        }
+    },
+    {
+        "model": "crm.InsuranceCompany",
+        "pk": 2,
+        "fields": {
+            "estate": [
+                1,
+                2
+            ],
+            "name": "保険会社02",
+            "phone_no": "0666360852",
+            "created_at": "2022-07-28T00:31:09.732Z"
+        }
+    },
+    {
+        "model": "crm.IntroductionCompany",
+        "pk": 1,
+        "fields": {
+            "name": "紹介会社01",
+            "phone_no": "0366360851",
+            "person_in_charge": "山田太郎",
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116",
+            "created_at": "2022-07-28T00:31:09.732Z",
+            "updated_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116",
+            "updated_at": "2022-07-28T00:31:09.732Z"
+        }
+    },
+    {
+        "model": "crm.IntroductionCompany",
+        "pk": 2,
+        "fields": {
+            "name": "紹介会社02",
+            "phone_no": "0366360852",
+            "person_in_charge": "山田次郎",
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116",
+            "created_at": "2022-07-28T00:31:09.732Z",
+            "updated_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116",
+            "updated_at": "2022-07-28T00:31:09.732Z"
+        }
+    },
+    {
+        "model": "crm.Kouku",
+        "pk": 1,
+        "fields": {
+            "estate": 1,
+            "land": null,
+            "purpose": 0,
+            "reception_date": "2022-10-11",
+            "reason": 0,
+            "holder": "テスト01",
+            "created_at": "2022-07-01T00:31:09.732Z",
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116",
+            "updated_at": "2022-07-01T00:31:09.732Z",
+            "updated_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116"
+        }
+    },
+    {
+        "model": "crm.Kouku",
+        "pk": 2,
+        "fields": {
+            "estate": null,
+            "land": 2,
+            "purpose": 1,
+            "reception_date": "2022-10-11",
+            "reason": 1,
+            "holder": "テスト02",
+            "created_at": "2022-07-01T00:31:09.732Z",
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116",
+            "updated_at": "2022-07-01T00:31:09.732Z",
+            "updated_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116"
+        }
+    },
+    {
+        "model": "crm.Otsuku",
+        "pk": 1,
+        "fields": {
+            "estate": null,
+            "land": 1,
+            "purpose": 0,
+            "reception_date": "2022-10-11",
+            "loan": 400,
+            "debtor": "テスト03",
+            "debtee": 0,
+            "created_at": "2022-07-28T00:31:09.732Z",
+            "updated_at": "2022-07-28T00:31:09.732Z",
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116",
+            "updated_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116"
+        }
+    },
+    {
+        "model": "crm.Otsuku",
+        "pk": 2,
+        "fields": {
+            "estate": 2,
+            "land": null,
+            "purpose": 1,
+            "reception_date": "2022-10-11",
+            "loan": 500,
+            "debtor": "テスト05",
+            "debtee": 1,
+            "created_at": "2022-07-28T00:31:09.732Z",
+            "updated_at": "2022-07-28T00:31:09.732Z",
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116",
+            "updated_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116"
+        }
+    },
+    {
+        "model": "crm.RepairCompany",
+        "pk": 1,
+        "fields": {
+            "name": "修理会社01",
+            "phone_no": "0766360851"
+        }
+    },
+    {
+        "model": "crm.RepairCompany",
+        "pk": 2,
+        "fields": {
+            "name": "修理会社02",
+            "phone_no": "0766360852"
+        }
+    },
+    {
+        "model": "crm.Repair",
+        "pk": 1,
+        "fields": {
+            "estate": 1,
+            "repair_company": 1,
+            "repair_info": "修理情報01",
+            "repair_fee": 500,
+            "created_at": "2022-07-28T00:31:09.732Z",
+            "updated_at": "2022-07-28T00:31:09.732Z",
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116",
+            "updated_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116"
+        }
+    },
+    {
+        "model": "crm.Repair",
+        "pk": 2,
+        "fields": {
+            "estate": 2,
+            "repair_company": 2,
+            "repair_info": "修理情報02",
+            "repair_fee": 600,
+            "created_at": "2022-07-28T00:31:09.732Z",
+            "updated_at": "2022-07-28T00:31:09.732Z",
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116",
+            "updated_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116"
+        }
+    },
+    {
+        "model": "crm.EvaluationStandard",
+        "pk": 1,
+        "fields": {
+            "standard": "基準01",
+            "standard_content": "基準内容01",
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116",
+            "created_at": "2022-07-28T00:31:09.732Z"
+        }
+    },
+    {
+        "model": "crm.EvaluationStandard",
+        "pk": 2,
+        "fields": {
+            "standard": "基準02",
+            "standard_content": "基準内容02",
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116",
+            "created_at": "2022-07-28T00:31:09.732Z"
+        }
+    },
+    {
+        "model": "crm.EvaluationResult",
+        "pk": 1,
+        "fields": {
+            "evaluation_standard": 1,
+            "estate": 1,
+            "result": "OK",
+            "evaluation_judge": 1,
+            "reason_memo": "基準を満たしたから",
+            "created_at": "2022-07-28T00:31:09.732Z",
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116",
+            "updated_at": "2022-07-28T00:31:09.732Z",
+            "updated_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116"
+        }
+    },
+    {
+        "model": "crm.EvaluationResult",
+        "pk": 2,
+        "fields": {
+            "evaluation_standard": 2,
+            "estate": 2,
+            "result": "NG",
+            "evaluation_judge": 0,
+            "reason_memo": "基準を満たしてないから",
+            "created_at": "2022-07-28T00:31:09.732Z",
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116",
+            "updated_at": "2022-07-28T00:31:09.732Z",
+            "updated_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116"
+        }
+    },
+    {
+        "model": "crm.EvaluateCompany",
+        "pk": 1,
+        "fields": {
+            "name": "評価会社01",
+            "phone_no": "0866360851",
+            "person_in_charge": "山田太郎",
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116",
+            "created_at": "2022-07-28T00:31:09.732Z"
+        }
+    },
+    {
+        "model": "crm.EvaluateCompany",
+        "pk": 2,
+        "fields": {
+            "name": "評価会社02",
+            "phone_no": "0866360852",
+            "person_in_charge": "山田次郎",
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116",
+            "created_at": "2022-07-28T00:31:09.732Z"
+        }
+    },
+    {
+        "model": "crm.EvaluateCompanyEvaluations",
+        "pk": 1,
+        "fields": {
+            "estate": 1,
+            "evaluate_company": 1,
+            "estate_valuation_fee": 40,
+            "land_valuation_fee": 40,
+            "status": 0,
+            "memo": "test01 memo01",
+            "created_at": "2022-07-28T00:31:09.732Z",
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116",
+            "updated_at": "2022-07-28T00:31:09.732Z",
+            "updated_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116"
+        }
+    },
+    {
+        "model": "crm.EvaluateCompanyEvaluations",
+        "pk": 2,
+        "fields": {
+            "estate": 2,
+            "evaluate_company": 2,
+            "estate_valuation_fee": 50,
+            "land_valuation_fee": 50,
+            "status": 1,
+            "memo": "test02 memo02",
+            "created_at": "2022-07-28T00:31:09.732Z",
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116",
+            "updated_at": "2022-07-28T00:31:09.732Z",
+            "updated_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116"
+        }
+    },
+    {
+        "model": "crm.EstatePhoto",
+        "pk": 1,
+        "fields": {
+            "estate": 1,
+            "photo": "写真01",
+            "memo": "メモ01",
+            "in_out": 0,
+            "created_at": "2022-07-28T00:31:09.732Z"
+        }
+    },
+    {
+        "model": "crm.EstatePhoto",
+        "pk": 2,
+        "fields": {
+            "estate": 2,
+            "photo": "写真02",
+            "memo": "メモ02",
+            "in_out": 1,
+            "created_at": "2022-07-28T00:31:09.732Z"
+        }
+    },
+    {
+        "model": "crm.Pet",
+        "pk": 1,
+        "fields": {
+            "customer": 1,
+            "type": "猫",
+            "count": 5,
+            "environment": "良好",
+            "created_at": "2022-07-28T00:31:09.732Z"
+        }
+    },
+    {
+        "model": "crm.Pet",
+        "pk": 2,
+        "fields": {
+            "customer": 2,
+            "type": "犬",
+            "count": 4,
+            "environment": "良好",
+            "created_at": "2022-07-28T00:31:09.732Z"
+        }
+    },
+    {
+        "model": "crm.EarningsSim",
+        "pk": 1,
+        "fields": {
+            "estate": 1,
+            "created_at": "2022-07-28T00:31:09.732Z",
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116"
+        }
+    },
+    {
+        "model": "crm.EarningsSim",
+        "pk": 2,
+        "fields": {
+            "estate": 2,
+            "created_at": "2022-07-28T00:31:09.732Z",
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116"
+        }
+    },
+    {
+        "model": "crm.EarningsIndex",
+        "pk": 1,
+        "fields": {
+            "sim": 1,
+            "land_valuation": 3.5,
+            "estate_valuation": 3.5,
+            "land_acquisition_tax": 3.5,
+            "estate_acquisition_tax": 3.5,
+            "land_registration_license_tax": 3.5,
+            "estate_registration_license_tax": 3.5,
+            "intermediate_fee": 3.5,
+            "related_fee": 3.5,
+            "sales_tax_rate": 3.5,
+            "judicial_scrivener_fee": 3.5,
+            "consignment_fee": 3.5,
+            "monthly_management_repair_fund": 3.5,
+            "property_tax_index": 3.5,
+            "city_planning_tax": 3.5,
+            "fire_insurance_fee": 20,
+            "fire_insurance_renewal_date": "2022-07-28",
+            "other_fee": 20,
+            "renewal_fee": 20,
+            "estate_sell_off": 3.5,
+            "property_tax_pay_date": "2022-07-28",
+            "created_at": "2022-07-28T00:31:09.732Z",
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116"
+        }
+    },
+    {
+        "model": "crm.EarningsIndex",
+        "pk": 2,
+        "fields": {
+            "sim": 2,
+            "land_valuation": 3.6,
+            "estate_valuation": 3.6,
+            "land_acquisition_tax": 3.6,
+            "estate_acquisition_tax": 3.6,
+            "land_registration_license_tax": 3.6,
+            "estate_registration_license_tax": 3.6,
+            "intermediate_fee": 3.6,
+            "related_fee": 3.6,
+            "sales_tax_rate": 3.6,
+            "judicial_scrivener_fee": 3.6,
+            "consignment_fee": 3.6,
+            "monthly_management_repair_fund": 3.6,
+            "property_tax_index": 3.6,
+            "city_planning_tax": 3.6,
+            "fire_insurance_fee": 20,
+            "fire_insurance_renewal_date": "2022-07-28",
+            "other_fee": 20,
+            "renewal_fee": 20,
+            "estate_sell_off": 3.5,
+            "property_tax_pay_date": "2022-07-28",
+            "created_at": "2022-07-28T00:31:09.732Z",
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116"
+        }
+    },
+    {
+        "model": "crm.ALBAntiSocialCheck",
+        "pk": 1,
+        "fields": {
+            "name": "お客様01",
+            "kana": "オキャクサマゼロイチ",
+            "birthday": "2002-01-01",
+            "address": "滋賀県草津市西大路町1-1",
+            "cellphone_no": "09099999999",
+            "phone_no": "0775615151",
+            "workplace": "アイフル通商",
+            "workplace_phone_no": "0999999999",
+            "account_overview": "正常",
+            "balance": "1,000,000円",
+            "new_appraisal_loan_date": "令和4年1月1日",
+            "exclusion_clause": "有",
+            "anti_social_confirmation_date": "2022/07/28",
+            "anti_social_confirmation_reason": "京都府警への照会で反社と判明",
+            "response_policy": "未定（今後協議実施）",
+            "receipt_date": "2022/10/06",
+            "created_at": "2022-07-28T00:31:09.732Z",
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116"
+        }
+    },
+    {
+        "model": "crm.ALBAntiSocialCheck",
+        "pk": 2,
+        "fields": {
+            "name": "お客様02",
+            "kana": "オキャクサマゼロ二",
+            "birthday": "1992-01-01",
+            "address": "京都府京都市下京区烏丸通五条上る高砂町381-1",
+            "cellphone_no": "09099999999",
+            "phone_no": "0775615151",
+            "workplace": "アイフル通商",
+            "workplace_phone_no": "0999999999",
+            "account_overview": "正常",
+            "balance": "2,000,000円",
+            "new_appraisal_loan_date": "令和4年1月1日",
+            "exclusion_clause": "無",
+            "anti_social_confirmation_date": "2022/10/28",
+            "anti_social_confirmation_reason": "滋賀県警への照会で反社と判明",
+            "response_policy": "未定（今後協議実施）",
+            "receipt_date": "2022/10/07",
+            "created_at": "2022-07-28T00:31:09.732Z",
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116"
+        }
+    },
+    {
+        "model": "crm.PurchaseSurvey",
+        "pk": 1,
+        "fields": {
+            "purchase_date": "2022-07-28",
+            "purchase_price": 0,
+            "result": 1,
+            "reason": "買取",
+            "estate": 1,
+            "created_at": "2022-07-28T00:31:09.732Z",
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116"
+        }
+    },
+    {
+        "model": "crm.PurchaseSurvey",
+        "pk": 2,
+        "fields": {
+            "purchase_date": "2022-07-28",
+            "purchase_price": 100,
+            "result": 0,
+            "reason": "買取",
+            "estate": 2,
+            "created_at": "2022-07-28T00:31:09.732Z",
+            "created_by": "e7066567-87bd-4ce7-8c8c-d9f2f9fb3116"
+        }
+    }
+]
