@@ -1,0 +1,310 @@
+{
+    "ipcMode": null,
+    "executionRoleArn": "arn:aws:iam::760374758843:role/ECSTaskExecutionRole",
+    "containerDefinitions": [{
+            "dnsSearchDomains": [],
+            "environmentFiles": [],
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "secretOptions": [],
+                "options": {
+                    "awslogs-group": "ecs/ccc-txt-search/dev/backend/rails",
+                    "awslogs-region": "ap-northeast-1",
+                    "awslogs-stream-prefix": "ccc-txt-search"
+                }
+            },
+            "entryPoint": [
+                "/usr/local/bin/entrypoint.sh"
+            ],
+            "portMappings": [{
+                "hostPort": 3000,
+                "protocol": "tcp",
+                "containerPort": 3000
+            }],
+            "command": [],
+            "linuxParameters": null,
+            "cpu": 0,
+            "environment": [],
+            "resourceRequirements": null,
+            "ulimits": [],
+            "dnsServers": [],
+            "mountPoints": [{
+                "readOnly": null,
+                "containerPath": "/cloud_cc_txt_search_backend/tmp",
+                "sourceVolume": "tmp-data"
+            }],
+            "workingDirectory": "/cloud_cc_txt_search_backend",
+            "secrets": [{
+                    "valueFrom": "arn:aws:ssm:ap-northeast-1:760374758843:parameter/ccc-txt-search/common/TZ",
+                    "name": "TZ"
+                },
+                {
+                    "valueFrom": "arn:aws:ssm:ap-northeast-1:760374758843:parameter/ccc-txt-search/common/ENCODING",
+                    "name": "ENCODING"
+                },
+                {
+                    "valueFrom": "arn:aws:ssm:ap-northeast-1:760374758843:parameter/ccc-txt-search/common/AWS_DEFAULT_REGION",
+                    "name": "AWS_DEFAULT_REGION"
+                },
+                {
+                    "valueFrom": "arn:aws:ssm:ap-northeast-1:760374758843:parameter/ccc-txt-search/back-end/common/RAILS_MASTER_KEY",
+                    "name": "RAILS_MASTER_KEY"
+                },
+                {
+                    "valueFrom": "arn:aws:ssm:ap-northeast-1:760374758843:parameter/ccc-txt-search/back-end/dev/RAILS_ENV",
+                    "name": "RAILS_ENV"
+                },
+                {
+                    "valueFrom": "arn:aws:ssm:ap-northeast-1:760374758843:parameter/ccc-txt-search/back-end/dev/RAILS_LOG_TO_STDOUT",
+                    "name": "RAILS_LOG_TO_STDOUT"
+                },
+                {
+                    "valueFrom": "arn:aws:ssm:ap-northeast-1:760374758843:parameter/ccc-txt-search/back-end/dev/CORS_ORIGIN",
+                    "name": "CORS_ORIGIN"
+                },
+                {
+                    "valueFrom": "arn:aws:ssm:ap-northeast-1:760374758843:parameter/ccc-txt-search/back-end/dev/OPENSEARCH_USER_NAME",
+                    "name": "OPENSEARCH_USER_NAME"
+                },
+                {
+                    "valueFrom": "arn:aws:ssm:ap-northeast-1:760374758843:parameter/ccc-txt-search/back-end/dev/OPENSEARCH_PASSWORD",
+                    "name": "OPENSEARCH_PASSWORD"
+                },
+                {
+                    "valueFrom": "arn:aws:ssm:ap-northeast-1:760374758843:parameter/ccc-txt-search/back-end/dev/OPENSEARCH_URI",
+                    "name": "OPENSEARCH_URI"
+                },
+                {
+                    "valueFrom": "arn:aws:ssm:ap-northeast-1:760374758843:parameter/ccc-txt-search/back-end/dev/OPENSEARCH_INDEX",
+                    "name": "OPENSEARCH_INDEX"
+                },
+                {
+                    "valueFrom": "arn:aws:ssm:ap-northeast-1:760374758843:parameter/ccc-txt-search/back-end/dev/ADMIN_PASSWORD",
+                    "name": "ADMIN_PASSWORD"
+                },
+                {
+                    "valueFrom": "arn:aws:ssm:ap-northeast-1:760374758843:parameter/ccc-txt-search/back-end/dev/ADMIN_EMAIL",
+                    "name": "ADMIN_EMAIL"
+                },
+                {
+                    "valueFrom": "arn:aws:ssm:ap-northeast-1:760374758843:parameter/ccc-txt-search/back-end/dev/CLIENT_PASSWORD_RESET_URL",
+                    "name": "CLIENT_PASSWORD_RESET_URL"
+                },
+                {
+                    "valueFrom": "arn:aws:ssm:ap-northeast-1:760374758843:parameter/ccc-txt-search/back-end/dev/MAIL_FROM_ADDRESS",
+                    "name": "MAIL_FROM_ADDRESS"
+                },
+                {
+                    "valueFrom": "arn:aws:ssm:ap-northeast-1:760374758843:parameter/ccc-txt-search/back-end/dev/MAIL_LINK_HOST",
+                    "name": "MAIL_LINK_HOST"
+                },
+                {
+                    "valueFrom": "arn:aws:ssm:ap-northeast-1:760374758843:parameter/ccc-txt-search/back-end/dev/MONGODB_DATABASE",
+                    "name": "MONGODB_DATABASE"
+                },
+                {
+                    "valueFrom": "arn:aws:ssm:ap-northeast-1:760374758843:parameter/ccc-txt-search/back-end/dev/MONGODB_HOST",
+                    "name": "MONGODB_HOST"
+                },
+                {
+                    "valueFrom": "arn:aws:ssm:ap-northeast-1:760374758843:parameter/ccc-txt-search/back-end/dev/MONGODB_PASSWORD",
+                    "name": "MONGODB_PASSWORD"
+                },
+                {
+                    "valueFrom": "arn:aws:ssm:ap-northeast-1:760374758843:parameter/ccc-txt-search/back-end/dev/MONGODB_USER_NAME",
+                    "name": "MONGODB_USER_NAME"
+                }
+            ],
+            "dockerSecurityOptions": [],
+            "memory": null,
+            "memoryReservation": null,
+            "volumesFrom": [],
+            "stopTimeout": null,
+            "image": "<IMAGE1_NAME>",
+            "startTimeout": null,
+            "firelensConfiguration": null,
+            "dependsOn": null,
+            "disableNetworking": null,
+            "interactive": null,
+            "healthCheck": null,
+            "essential": true,
+            "links": [],
+            "hostname": null,
+            "extraHosts": [],
+            "pseudoTerminal": null,
+            "user": null,
+            "readonlyRootFilesystem": null,
+            "dockerLabels": {},
+            "systemControls": [],
+            "privileged": null,
+            "name": "app"
+        },
+        {
+            "dnsSearchDomains": [],
+            "environmentFiles": [],
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "secretOptions": [],
+                "options": {
+                    "awslogs-group": "ecs/ccc-txt-search/dev/backend/nginx",
+                    "awslogs-region": "ap-northeast-1",
+                    "awslogs-stream-prefix": "ccc-txt-search"
+                }
+            },
+            "entryPoint": [],
+            "portMappings": [{
+                "hostPort": 80,
+                "protocol": "tcp",
+                "containerPort": 80
+            }],
+            "command": [],
+            "linuxParameters": null,
+            "cpu": 0,
+            "environment": [],
+            "resourceRequirements": null,
+            "ulimits": [],
+            "dnsServers": [],
+            "mountPoints": [{
+                "readOnly": null,
+                "containerPath": "/cloud_cc_txt_search_backend/tmp",
+                "sourceVolume": "tmp-data"
+            }],
+            "workingDirectory": null,
+            "secrets": [{
+                    "valueFrom": "arn:aws:ssm:ap-northeast-1:760374758843:parameter/ccc-txt-search/common/TZ",
+                    "name": "TZ"
+                },
+                {
+                    "valueFrom": "arn:aws:ssm:ap-northeast-1:760374758843:parameter/ccc-txt-search/common/ENCODING",
+                    "name": "LANG"
+                },
+                {
+                    "valueFrom": "arn:aws:ssm:ap-northeast-1:760374758843:parameter/ccc-txt-search/common/ENCODING",
+                    "name": "LC_ALL"
+                }
+            ],
+            "dockerSecurityOptions": [],
+            "memory": null,
+            "memoryReservation": null,
+            "volumesFrom": [],
+            "stopTimeout": null,
+            "image": "<IMAGE2_NAME>",
+            "startTimeout": null,
+            "firelensConfiguration": null,
+            "dependsOn": [{
+                "containerName": "app",
+                "condition": "START"
+            }],
+            "disableNetworking": null,
+            "interactive": null,
+            "healthCheck": null,
+            "essential": true,
+            "links": [],
+            "hostname": null,
+            "extraHosts": [],
+            "pseudoTerminal": null,
+            "user": null,
+            "readonlyRootFilesystem": null,
+            "dockerLabels": {},
+            "systemControls": [],
+            "privileged": null,
+            "name": "web"
+        }
+    ],
+    "placementConstraints": [],
+    "memory": "1024",
+    "taskRoleArn": "arn:aws:iam::760374758843:role/ECSTaskRole",
+    "compatibilities": [
+        "EC2",
+        "FARGATE"
+    ],
+    "taskDefinitionArn": "arn:aws:ecs:ap-northeast-1:760374758843:task-definition/ccc-txt-search-dev-back-taskdef:12",
+    "family": "ccc-txt-search-dev-back-taskdef",
+    "requiresAttributes": [{
+            "targetId": null,
+            "targetType": null,
+            "value": null,
+            "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+        },
+        {
+            "targetId": null,
+            "targetType": null,
+            "value": null,
+            "name": "ecs.capability.execution-role-awslogs"
+        },
+        {
+            "targetId": null,
+            "targetType": null,
+            "value": null,
+            "name": "com.amazonaws.ecs.capability.ecr-auth"
+        },
+        {
+            "targetId": null,
+            "targetType": null,
+            "value": null,
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+        },
+        {
+            "targetId": null,
+            "targetType": null,
+            "value": null,
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.17"
+        },
+        {
+            "targetId": null,
+            "targetType": null,
+            "value": null,
+            "name": "com.amazonaws.ecs.capability.task-iam-role"
+        },
+        {
+            "targetId": null,
+            "targetType": null,
+            "value": null,
+            "name": "ecs.capability.container-ordering"
+        },
+        {
+            "targetId": null,
+            "targetType": null,
+            "value": null,
+            "name": "ecs.capability.execution-role-ecr-pull"
+        },
+        {
+            "targetId": null,
+            "targetType": null,
+            "value": null,
+            "name": "ecs.capability.secrets.ssm.environment-variables"
+        },
+        {
+            "targetId": null,
+            "targetType": null,
+            "value": null,
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+        },
+        {
+            "targetId": null,
+            "targetType": null,
+            "value": null,
+            "name": "ecs.capability.task-eni"
+        }
+    ],
+    "pidMode": null,
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "networkMode": "awsvpc",
+    "runtimePlatform": null,
+    "cpu": "512",
+    "revision": 12,
+    "status": "ACTIVE",
+    "inferenceAccelerators": null,
+    "proxyConfiguration": null,
+    "volumes": [{
+        "fsxWindowsFileServerVolumeConfiguration": null,
+        "efsVolumeConfiguration": null,
+        "name": "tmp-data",
+        "host": {
+            "sourcePath": null
+        },
+        "dockerVolumeConfiguration": null
+    }]
+}
