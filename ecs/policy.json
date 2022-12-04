@@ -1,0 +1,14 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [{
+        "Effect": "Allow",
+        "Resource": [
+            "arn:aws:codebuild:ap-northeast-1:028284651119:project/ag-leaseback-crm-back-stg-build-pj"
+        ],
+        "Action": [
+            "codebuild:StartBuild",
+            "codebuild:StopBuild",
+            "codebuild:RetryBuild"
+        ]
+    }]
+}
