@@ -1,154 +1,16 @@
 {
     "ipcMode": null,
-    "executionRoleArn": "arn:aws:iam::760374758843:role/ECSTaskExecutionRole",
+    "executionRoleArn": "arn:aws:iam::028284651119:role/ECSTaskExecutionRole",
     "containerDefinitions": [{
-            "dnsSearchDomains": [],
-            "environmentFiles": [],
+            "dnsSearchDomains": null,
+            "environmentFiles": null,
             "logConfiguration": {
                 "logDriver": "awslogs",
-                "secretOptions": [],
+                "secretOptions": null,
                 "options": {
-                    "awslogs-group": "ecs/ccc-txt-search/dev/backend/rails",
+                    "awslogs-group": "/ecs/ag-leaseback-crm-dev-back-task-def",
                     "awslogs-region": "ap-northeast-1",
-                    "awslogs-stream-prefix": "ccc-txt-search"
-                }
-            },
-            "entryPoint": [
-                "/usr/local/bin/entrypoint.sh"
-            ],
-            "portMappings": [{
-                "hostPort": 3000,
-                "protocol": "tcp",
-                "containerPort": 3000
-            }],
-            "command": [],
-            "linuxParameters": null,
-            "cpu": 0,
-            "environment": [],
-            "resourceRequirements": null,
-            "ulimits": [],
-            "dnsServers": [],
-            "mountPoints": [{
-                "readOnly": null,
-                "containerPath": "/cloud_cc_txt_search_backend/tmp",
-                "sourceVolume": "tmp-data"
-            }],
-            "workingDirectory": "/cloud_cc_txt_search_backend",
-            "secrets": [{
-                    "valueFrom": "arn:aws:ssm:ap-northeast-1:760374758843:parameter/ccc-txt-search/common/TZ",
-                    "name": "TZ"
-                },
-                {
-                    "valueFrom": "arn:aws:ssm:ap-northeast-1:760374758843:parameter/ccc-txt-search/common/ENCODING",
-                    "name": "ENCODING"
-                },
-                {
-                    "valueFrom": "arn:aws:ssm:ap-northeast-1:760374758843:parameter/ccc-txt-search/common/AWS_DEFAULT_REGION",
-                    "name": "AWS_DEFAULT_REGION"
-                },
-                {
-                    "valueFrom": "arn:aws:ssm:ap-northeast-1:760374758843:parameter/ccc-txt-search/back-end/common/RAILS_MASTER_KEY",
-                    "name": "RAILS_MASTER_KEY"
-                },
-                {
-                    "valueFrom": "arn:aws:ssm:ap-northeast-1:760374758843:parameter/ccc-txt-search/back-end/dev/RAILS_ENV",
-                    "name": "RAILS_ENV"
-                },
-                {
-                    "valueFrom": "arn:aws:ssm:ap-northeast-1:760374758843:parameter/ccc-txt-search/back-end/dev/RAILS_LOG_TO_STDOUT",
-                    "name": "RAILS_LOG_TO_STDOUT"
-                },
-                {
-                    "valueFrom": "arn:aws:ssm:ap-northeast-1:760374758843:parameter/ccc-txt-search/back-end/dev/CORS_ORIGIN",
-                    "name": "CORS_ORIGIN"
-                },
-                {
-                    "valueFrom": "arn:aws:ssm:ap-northeast-1:760374758843:parameter/ccc-txt-search/back-end/dev/OPENSEARCH_USER_NAME",
-                    "name": "OPENSEARCH_USER_NAME"
-                },
-                {
-                    "valueFrom": "arn:aws:ssm:ap-northeast-1:760374758843:parameter/ccc-txt-search/back-end/dev/OPENSEARCH_PASSWORD",
-                    "name": "OPENSEARCH_PASSWORD"
-                },
-                {
-                    "valueFrom": "arn:aws:ssm:ap-northeast-1:760374758843:parameter/ccc-txt-search/back-end/dev/OPENSEARCH_URI",
-                    "name": "OPENSEARCH_URI"
-                },
-                {
-                    "valueFrom": "arn:aws:ssm:ap-northeast-1:760374758843:parameter/ccc-txt-search/back-end/dev/OPENSEARCH_INDEX",
-                    "name": "OPENSEARCH_INDEX"
-                },
-                {
-                    "valueFrom": "arn:aws:ssm:ap-northeast-1:760374758843:parameter/ccc-txt-search/back-end/dev/ADMIN_PASSWORD",
-                    "name": "ADMIN_PASSWORD"
-                },
-                {
-                    "valueFrom": "arn:aws:ssm:ap-northeast-1:760374758843:parameter/ccc-txt-search/back-end/dev/ADMIN_EMAIL",
-                    "name": "ADMIN_EMAIL"
-                },
-                {
-                    "valueFrom": "arn:aws:ssm:ap-northeast-1:760374758843:parameter/ccc-txt-search/back-end/dev/CLIENT_PASSWORD_RESET_URL",
-                    "name": "CLIENT_PASSWORD_RESET_URL"
-                },
-                {
-                    "valueFrom": "arn:aws:ssm:ap-northeast-1:760374758843:parameter/ccc-txt-search/back-end/dev/MAIL_FROM_ADDRESS",
-                    "name": "MAIL_FROM_ADDRESS"
-                },
-                {
-                    "valueFrom": "arn:aws:ssm:ap-northeast-1:760374758843:parameter/ccc-txt-search/back-end/dev/MAIL_LINK_HOST",
-                    "name": "MAIL_LINK_HOST"
-                },
-                {
-                    "valueFrom": "arn:aws:ssm:ap-northeast-1:760374758843:parameter/ccc-txt-search/back-end/dev/MONGODB_DATABASE",
-                    "name": "MONGODB_DATABASE"
-                },
-                {
-                    "valueFrom": "arn:aws:ssm:ap-northeast-1:760374758843:parameter/ccc-txt-search/back-end/dev/MONGODB_HOST",
-                    "name": "MONGODB_HOST"
-                },
-                {
-                    "valueFrom": "arn:aws:ssm:ap-northeast-1:760374758843:parameter/ccc-txt-search/back-end/dev/MONGODB_PASSWORD",
-                    "name": "MONGODB_PASSWORD"
-                },
-                {
-                    "valueFrom": "arn:aws:ssm:ap-northeast-1:760374758843:parameter/ccc-txt-search/back-end/dev/MONGODB_USER_NAME",
-                    "name": "MONGODB_USER_NAME"
-                }
-            ],
-            "dockerSecurityOptions": [],
-            "memory": null,
-            "memoryReservation": null,
-            "volumesFrom": [],
-            "stopTimeout": null,
-            "image": "<IMAGE1_NAME>",
-            "startTimeout": null,
-            "firelensConfiguration": null,
-            "dependsOn": null,
-            "disableNetworking": null,
-            "interactive": null,
-            "healthCheck": null,
-            "essential": true,
-            "links": [],
-            "hostname": null,
-            "extraHosts": [],
-            "pseudoTerminal": null,
-            "user": null,
-            "readonlyRootFilesystem": null,
-            "dockerLabels": {},
-            "systemControls": [],
-            "privileged": null,
-            "name": "app"
-        },
-        {
-            "dnsSearchDomains": [],
-            "environmentFiles": [],
-            "logConfiguration": {
-                "logDriver": "awslogs",
-                "secretOptions": [],
-                "options": {
-                    "awslogs-group": "ecs/ccc-txt-search/dev/backend/nginx",
-                    "awslogs-region": "ap-northeast-1",
-                    "awslogs-stream-prefix": "ccc-txt-search"
+                    "awslogs-stream-prefix": "ecs"
                 }
             },
             "entryPoint": [],
@@ -162,33 +24,21 @@
             "cpu": 0,
             "environment": [],
             "resourceRequirements": null,
-            "ulimits": [],
-            "dnsServers": [],
+            "ulimits": null,
+            "dnsServers": null,
             "mountPoints": [{
                 "readOnly": null,
-                "containerPath": "/cloud_cc_txt_search_backend/tmp",
-                "sourceVolume": "tmp-data"
+                "containerPath": "/ag_smile_leaseback_crm_back/tmp",
+                "sourceVolume": "gunicorn"
             }],
             "workingDirectory": null,
-            "secrets": [{
-                    "valueFrom": "arn:aws:ssm:ap-northeast-1:760374758843:parameter/ccc-txt-search/common/TZ",
-                    "name": "TZ"
-                },
-                {
-                    "valueFrom": "arn:aws:ssm:ap-northeast-1:760374758843:parameter/ccc-txt-search/common/ENCODING",
-                    "name": "LANG"
-                },
-                {
-                    "valueFrom": "arn:aws:ssm:ap-northeast-1:760374758843:parameter/ccc-txt-search/common/ENCODING",
-                    "name": "LC_ALL"
-                }
-            ],
-            "dockerSecurityOptions": [],
+            "secrets": null,
+            "dockerSecurityOptions": null,
             "memory": null,
-            "memoryReservation": null,
+            "memoryReservation": 128,
             "volumesFrom": [],
             "stopTimeout": null,
-            "image": "<IMAGE2_NAME>",
+            "image": "<IMAGE1_NAME>",
             "startTimeout": null,
             "firelensConfiguration": null,
             "dependsOn": [{
@@ -199,27 +49,153 @@
             "interactive": null,
             "healthCheck": null,
             "essential": true,
-            "links": [],
+            "links": null,
             "hostname": null,
-            "extraHosts": [],
+            "extraHosts": null,
             "pseudoTerminal": null,
             "user": null,
             "readonlyRootFilesystem": null,
-            "dockerLabels": {},
-            "systemControls": [],
+            "dockerLabels": null,
+            "systemControls": null,
             "privileged": null,
             "name": "web"
+        },
+        {
+            "dnsSearchDomains": null,
+            "environmentFiles": null,
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "secretOptions": null,
+                "options": {
+                    "awslogs-group": "/ecs/ag-leaseback-crm-dev-back-task-def",
+                    "awslogs-region": "ap-northeast-1",
+                    "awslogs-stream-prefix": "ecs"
+                }
+            },
+            "entryPoint": [
+                "/usr/local/bin/entrypoint.sh"
+            ],
+            "portMappings": [{
+                "hostPort": 8000,
+                "protocol": "tcp",
+                "containerPort": 8000
+            }],
+            "command": [],
+            "linuxParameters": null,
+            "cpu": 0,
+            "environment": [],
+            "resourceRequirements": null,
+            "ulimits": null,
+            "dnsServers": null,
+            "mountPoints": [{
+                "readOnly": null,
+                "containerPath": "/ag_smile_leaseback_crm_back/tmp",
+                "sourceVolume": "gunicorn"
+            }],
+            "workingDirectory": "/ag_smile_leaseback_crm_back",
+            "secrets": [{
+                    "valueFrom": "arn:aws:ssm:ap-northeast-1:028284651119:parameter/ag-leaseback-crm/common/AWS_SES_REGION_ENDPOINT",
+                    "name": "AWS_SES_REGION_ENDPOINT"
+                },
+                {
+                    "valueFrom": "arn:aws:ssm:ap-northeast-1:028284651119:parameter/ag-leaseback-crm/common/AWS_SES_REGION_NAME",
+                    "name": "AWS_SES_REGION_NAME"
+                },
+                {
+                    "valueFrom": "arn:aws:ssm:ap-northeast-1:028284651119:parameter/ag-leaseback-crm/back-end/stg/CRM_BASE_URL",
+                    "name": "CRM_BASE_URL"
+                },
+                {
+                    "valueFrom": "arn:aws:ssm:ap-northeast-1:028284651119:parameter/ag-leaseback-crm/back-end/stg/CSRF_COOKIE_DOMAIN",
+                    "name": "CSRF_COOKIE_DOMAIN"
+                },
+                {
+                    "valueFrom": "arn:aws:ssm:ap-northeast-1:028284651119:parameter/ag-leaseback-crm/common/DEBUG",
+                    "name": "DEBUG"
+                },
+                {
+                    "valueFrom": "arn:aws:ssm:ap-northeast-1:028284651119:parameter/ag-leaseback-crm/back-end/stg/DEFAULT_FROM_EMAIL",
+                    "name": "DEFAULT_FROM_EMAIL"
+                },
+                {
+                    "valueFrom": "arn:aws:ssm:ap-northeast-1:028284651119:parameter/ag-leaseback-crm/back-end/stg/DJANGO_ALLOWED_HOSTS",
+                    "name": "DJANGO_ALLOWED_HOSTS"
+                },
+                {
+                    "valueFrom": "arn:aws:ssm:ap-northeast-1:028284651119:parameter/ag-leaseback-crm/common/LANGUAGE_CODE",
+                    "name": "LANGUAGE_CODE"
+                },
+                {
+                    "valueFrom": "arn:aws:ssm:ap-northeast-1:028284651119:parameter/ag-leaseback-crm/back-end/stg/MYSQL_PORT",
+                    "name": "MTSQL_PORT"
+                },
+                {
+                    "valueFrom": "arn:aws:ssm:ap-northeast-1:028284651119:parameter/ag-leaseback-crm/back-end/stg/MYSQL_DATABASE",
+                    "name": "MYSQL_DATABASE"
+                },
+                {
+                    "valueFrom": "arn:aws:ssm:ap-northeast-1:028284651119:parameter/ag-leaseback-crm/back-end/stg/MYSQL_HOST",
+                    "name": "MYSQL_HOST"
+                },
+                {
+                    "valueFrom": "arn:aws:ssm:ap-northeast-1:028284651119:parameter/ag-leaseback-crm/back-end/stg/MYSQL_PASSWORD",
+                    "name": "MYSQL_PASSWORD"
+                },
+                {
+                    "valueFrom": "arn:aws:ssm:ap-northeast-1:028284651119:parameter/ag-leaseback-crm/back-end/stg/MYSQL_ROOT_PASSWORD",
+                    "name": "MYSQL_ROOT_PASSWORD"
+                },
+                {
+                    "valueFrom": "arn:aws:ssm:ap-northeast-1:028284651119:parameter/ag-leaseback-crm/back-end/stg/MYSQL_USER",
+                    "name": "MYSQL_USER"
+                },
+                {
+                    "valueFrom": "arn:aws:ssm:ap-northeast-1:028284651119:parameter/ag-leaseback-crm/common/SECRET_KEY",
+                    "name": "SECRET_KEY"
+                },
+                {
+                    "valueFrom": "arn:aws:ssm:ap-northeast-1:028284651119:parameter/ag-leaseback-crm/common/TIME_ZONE",
+                    "name": "TIME_ZONE"
+                },
+                {
+                    "valueFrom": "arn:aws:ssm:ap-northeast-1:028284651119:parameter/ag-leaseback-crm/back-end/stg/TRUSTED_ORIGINS",
+                    "name": "TRUSTED_ORIGINS"
+                }
+            ],
+            "dockerSecurityOptions": null,
+            "memory": null,
+            "memoryReservation": 128,
+            "volumesFrom": [],
+            "stopTimeout": null,
+            "image": "<IMAGE2_NAME>",
+            "startTimeout": null,
+            "firelensConfiguration": null,
+            "dependsOn": null,
+            "disableNetworking": null,
+            "interactive": null,
+            "healthCheck": null,
+            "essential": true,
+            "links": null,
+            "hostname": null,
+            "extraHosts": null,
+            "pseudoTerminal": null,
+            "user": null,
+            "readonlyRootFilesystem": null,
+            "dockerLabels": null,
+            "systemControls": null,
+            "privileged": null,
+            "name": "app"
         }
     ],
     "placementConstraints": [],
-    "memory": "1024",
-    "taskRoleArn": "arn:aws:iam::760374758843:role/ECSTaskRole",
+    "memory": "2048",
+    "taskRoleArn": "arn:aws:iam::028284651119:role/ECSTaskRole",
     "compatibilities": [
         "EC2",
         "FARGATE"
     ],
-    "taskDefinitionArn": "arn:aws:ecs:ap-northeast-1:760374758843:task-definition/ccc-txt-search-dev-back-taskdef:12",
-    "family": "ccc-txt-search-dev-back-taskdef",
+    "taskDefinitionArn": "arn:aws:ecs:ap-northeast-1:028284651119:task-definition/ag-leaseback-crm-stg-back-task-def:42",
+    "family": "ag-leaseback-crm-stg-back-task-def",
     "requiresAttributes": [{
             "targetId": null,
             "targetType": null,
@@ -249,6 +225,12 @@
             "targetType": null,
             "value": null,
             "name": "com.amazonaws.ecs.capability.docker-remote-api.1.17"
+        },
+        {
+            "targetId": null,
+            "targetType": null,
+            "value": null,
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.21"
         },
         {
             "targetId": null,
@@ -293,15 +275,15 @@
     ],
     "networkMode": "awsvpc",
     "runtimePlatform": null,
-    "cpu": "512",
-    "revision": 12,
+    "cpu": "1024",
+    "revision": 42,
     "status": "ACTIVE",
     "inferenceAccelerators": null,
     "proxyConfiguration": null,
     "volumes": [{
         "fsxWindowsFileServerVolumeConfiguration": null,
         "efsVolumeConfiguration": null,
-        "name": "tmp-data",
+        "name": "gunicorn",
         "host": {
             "sourcePath": null
         },
