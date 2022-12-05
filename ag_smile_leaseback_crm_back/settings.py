@@ -205,7 +205,7 @@ else:
     CSRF_COOKIE_SECURE = True
     CSRF_COOKIE_HTTPONLY = False
     CSRF_TRUSTED_ORIGINS = os.environ.get("TRUSTED_ORIGINS").split(" ")
-    CSRF_COOKIE_DOMAIN = os.environ.get("CSRF_COOKIE_DOMAIN")
+    # CSRF_COOKIE_DOMAIN = os.environ.get("CSRF_COOKIE_DOMAIN")
 
     #AWS S3の設定
     DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'

@@ -13,6 +13,8 @@ phases:
       - IMAGE_TAG=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
   build:
     commands:
+      - echo Build started on `date`
+      - echo Building the Docker image...
       - cd $CODEBUILD_SRC_DIR
       - docker build -f $NGINX_DOCKERFILE_PATH -t $ECR_NGINX_REPOSITORY_URI:$IMAGE_TAG .
       - docker tag $ECR_NGINX_REPOSITORY_URI:$IMAGE_TAG $ECR_NGINX_REPOSITORY_URI:$IMAGE_TAG
