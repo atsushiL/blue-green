@@ -122,20 +122,12 @@
                     "name": "DJANGO_ALLOWED_HOSTS"
                 },
                 {
-                    "valueFrom": "arn:aws:ssm:ap-northeast-1:028284651119:parameter/ag-leaseback-crm/common/LANGUAGE_CODE",
-                    "name": "LANGUAGE_CODE"
-                },
-                {
                     "valueFrom": "arn:aws:ssm:ap-northeast-1:028284651119:parameter/ag-leaseback-crm/back-end/stg/MYSQL_PORT",
                     "name": "MTSQL_PORT"
                 },
                 {
                     "valueFrom": "arn:aws:ssm:ap-northeast-1:028284651119:parameter/ag-leaseback-crm/back-end/stg/MYSQL_DATABASE",
                     "name": "MYSQL_DATABASE"
-                },
-                {
-                    "valueFrom": "arn:aws:ssm:ap-northeast-1:028284651119:parameter/ag-leaseback-crm/back-end/stg/MYSQL_HOST",
-                    "name": "MYSQL_HOST"
                 },
                 {
                     "valueFrom": "arn:aws:ssm:ap-northeast-1:028284651119:parameter/ag-leaseback-crm/back-end/stg/MYSQL_PASSWORD",
@@ -152,10 +144,6 @@
                 {
                     "valueFrom": "arn:aws:ssm:ap-northeast-1:028284651119:parameter/ag-leaseback-crm/common/SECRET_KEY",
                     "name": "SECRET_KEY"
-                },
-                {
-                    "valueFrom": "arn:aws:ssm:ap-northeast-1:028284651119:parameter/ag-leaseback-crm/common/TIME_ZONE",
-                    "name": "TIME_ZONE"
                 },
                 {
                     "valueFrom": "arn:aws:ssm:ap-northeast-1:028284651119:parameter/ag-leaseback-crm/back-end/stg/TRUSTED_ORIGINS",
