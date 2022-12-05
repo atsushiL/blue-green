@@ -38,7 +38,7 @@
             "memoryReservation": 128,
             "volumesFrom": [],
             "stopTimeout": null,
-            "image": "028284651119.dkr.ecr.ap-northeast-1.amazonaws.com/ag-leaseback-crm/stg/backend/nginx:6b8b1b0",
+            "image": "<IMAGE1_NAME>",
             "startTimeout": null,
             "firelensConfiguration": null,
             "dependsOn": [{
@@ -167,7 +167,7 @@
             "memoryReservation": 128,
             "volumesFrom": [],
             "stopTimeout": null,
-            "image": "028284651119.dkr.ecr.ap-northeast-1.amazonaws.com/ag-leaseback-crm/stg/backend/django:6b8b1b0",
+            "image": "<IMAGE2_NAME>",
             "startTimeout": null,
             "firelensConfiguration": null,
             "dependsOn": null,
@@ -188,13 +188,13 @@
         }
     ],
     "placementConstraints": [],
-    "memory": "2048",
+    "memory": "1024",
     "taskRoleArn": "arn:aws:iam::028284651119:role/ECSTaskRole",
     "compatibilities": [
         "EC2",
         "FARGATE"
     ],
-    "taskDefinitionArn": "arn:aws:ecs:ap-northeast-1:028284651119:task-definition/ag-leaseback-crm-stg-back-task-def:49",
+    "taskDefinitionArn": "arn:aws:ecs:ap-northeast-1:028284651119:task-definition/ag-leaseback-crm-stg-back-task-def:51",
     "family": "ag-leaseback-crm-stg-back-task-def",
     "requiresAttributes": [{
             "targetId": null,
@@ -275,8 +275,8 @@
     ],
     "networkMode": "awsvpc",
     "runtimePlatform": null,
-    "cpu": "1024",
-    "revision": 49,
+    "cpu": "512",
+    "revision": 51,
     "status": "ACTIVE",
     "inferenceAccelerators": null,
     "proxyConfiguration": null,
