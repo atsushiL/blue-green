@@ -126,6 +126,10 @@
                     "name": "MYSQL_PORT"
                 },
                 {
+                    "valueFrom": "arn:aws:ssm:ap-northeast-1:028284651119:parameter/ag-leaseback-crm/back-end/stg/MYSQL_HOST",
+                    "name": "MYSQL_HOST"
+                },
+                {
                     "valueFrom": "arn:aws:ssm:ap-northeast-1:028284651119:parameter/ag-leaseback-crm/back-end/stg/MYSQL_DATABASE",
                     "name": "MYSQL_DATABASE"
                 },
