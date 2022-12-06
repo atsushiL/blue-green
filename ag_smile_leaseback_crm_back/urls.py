@@ -39,4 +39,5 @@ urlpatterns = [
         name="redoc",
     ),
     path("api/", include("crm.urls")),
-] + static(MEDIA_URL, document_root=MEDIA_ROOT)
+]
+#  + static(MEDIA_URL, document_root=MEDIA_ROOT)

@@ -210,7 +210,7 @@ else:
     #AWS S3の設定
     DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
     STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
-    AWS_STORAGE_BUCKET_NAME = "leasebackcrm-bucket"
+    AWS_STORAGE_BUCKET_NAME = "ag-leaseback-crm-stg-img"
 
 MEDIA_URL = '/upload/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'upload')
