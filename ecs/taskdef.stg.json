@@ -110,10 +110,6 @@
                     "name": "CSRF_COOKIE_DOMAIN"
                 },
                 {
-                    "valueFrom": "arn:aws:ssm:ap-northeast-1:028284651119:parameter/ag-leaseback-crm/common/DEBUG_FLAG",
-                    "name": "DEBUG_FLAG"
-                },
-                {
                     "valueFrom": "arn:aws:ssm:ap-northeast-1:028284651119:parameter/ag-leaseback-crm/back-end/stg/DEFAULT_FROM_EMAIL",
                     "name": "DEFAULT_FROM_EMAIL"
                 },
@@ -144,6 +140,10 @@
                 {
                     "valueFrom": "arn:aws:ssm:ap-northeast-1:028284651119:parameter/ag-leaseback-crm/back-end/stg/MYSQL_USER",
                     "name": "MYSQL_USER"
+                },
+                {
+                    "valueFrom": "arn:aws:ssm:ap-northeast-1:028284651119:parameter/ag-leaseback-crm/common/DJANGO_SECRET_KEY",
+                    "name": "DJANGO_SECRET_KEY"
                 },
                 {
                     "valueFrom": "arn:aws:ssm:ap-northeast-1:028284651119:parameter/ag-leaseback-crm/back-end/stg/AWS_STORAGE_BUCKET_NAME",
