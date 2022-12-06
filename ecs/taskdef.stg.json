@@ -146,10 +146,6 @@
                     "name": "MYSQL_USER"
                 },
                 {
-                    "valueFrom": "arn:aws:ssm:ap-northeast-1:028284651119:parameter/ag-leaseback-crm/common/DJANGO_SECRET_KEY",
-                    "name": "DJANGO_SECRET_KEY"
-                },
-                {
                     "valueFrom": "arn:aws:ssm:ap-northeast-1:028284651119:parameter/ag-leaseback-crm/back-end/stg/AWS_STORAGE_BUCKET_NAME",
                     "name": "AWS_STORAGE_BUCKET_NAME"
                 },
