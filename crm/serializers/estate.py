@@ -31,7 +31,6 @@ class EstateSerializer(serializers.ModelSerializer):
             rep["status"] = purchase_survey.result
         else:
             rep["status"] = []
-        address = instance.customer.address.first()
 
         # 申込日を取得
         rep["application_date"] = provisional_customer_data.application_date

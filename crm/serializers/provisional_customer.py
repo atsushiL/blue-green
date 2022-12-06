@@ -67,7 +67,7 @@ class ListProvisionalCustomerSerializer(serializers.ModelSerializer):
             provisional_customer_data.status).name
         rep["approval"] = provisional_customer_data.approval
         rep["name"] = customer_data.name
-        rep["kana"] = customer_data.kana
+        rep["cellphone_no"] = customer_data.cellphone_no
         rep["created_by"] = customer.created_by.name
         rep["anti_social_check"] = anti_social_check_status
         rep["anti_social_result"] = anti_social_result

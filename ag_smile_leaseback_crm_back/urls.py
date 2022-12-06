@@ -15,7 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from ag_smile_leaseback_crm_back.settings import MEDIA_URL, MEDIA_ROOT
+
+from ag_smile_leaseback_crm_back import settings
 from django.conf.urls.static import static
 from drf_spectacular.views import (
     SpectacularAPIView,
@@ -40,4 +41,5 @@ urlpatterns = [
     ),
     path("api/", include("crm.urls")),
 ]
-#  + static(MEDIA_URL, document_root=MEDIA_ROOT)
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

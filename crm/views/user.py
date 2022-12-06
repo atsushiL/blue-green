@@ -65,7 +65,7 @@ class UserViewSet(ModelViewSet):
             "email": email,
         }
         token = generate_token(data, settings.VERIFY_USER_TOKEN_EXPIRE)
-        base_url = os.environ.get("BASE_URL", settings.CRM_BASE_URL)
+        base_url = settings.CRM_BASE_URL
         url = base_url + "/verify_user/" + token
         serializer.save()
         send_welcome_email(user_email=email, username=name, url=url)
@@ -82,7 +82,7 @@ class UserViewSet(ModelViewSet):
             "email": user.email,
         }
         token = generate_token(data, settings.VERIFY_USER_TOKEN_EXPIRE)
-        base_url = os.environ.get("BASE_URL", settings.CRM_BASE_URL)
+        base_url = settings.CRM_BASE_URL
         url = base_url + "/verify_user/" + token
         if user.verified:
             JsonResponse(data={"msg": "user verified."}, status=400)
@@ -109,7 +109,7 @@ class UserViewSet(ModelViewSet):
             return HttpResponse()
         data = {"email": email}
         token = generate_token(data, settings.PASSWORD_RESET_TOKEN_EXPIRE)
-        base_url = os.environ.get("BASE_URL", settings.CRM_BASE_URL)
+        base_url = settings.CRM_BASE_URL
         url = base_url + "/reset_password/" + token
         send_password_reset(email, url)
         return HttpResponse()

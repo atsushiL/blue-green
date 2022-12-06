@@ -4,9 +4,10 @@ from rest_framework import status
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.decorators import action
 from django.db.models import Q
+from django_filters.rest_framework import DjangoFilterBackend
 
+from crm.permission import IsSuperUser, IsGeneralUser
 from crm.serializers.building_info import BuildingInfoSerializer
-from crm.serializers.estate_certificate import EstateCertificateSerializer
 from crm.serializers.address import AddressSerializer
 from crm.serializers.purchase_survey import PurchaseSurveySerializer
 from crm.serializers.estate import EstateSerializer
@@ -19,23 +20,24 @@ from crm.models import (
     EvaluationResult,
     Estate,
     BuildingInfo,
-    EstateCertificate,
     Address,
     EvaluateCompany,
     EvaluateCompanyEvaluations,
     Customer,
+    ProvisionalCustomerData,
 )
-from crm.filters import get_newest_customer_data
+from crm.filters import EstateFilter, get_newest_customer_data
 
 
 class EstateViewSet(ModelViewSet):
+    filter_backends = (DjangoFilterBackend,)
+    filterset_class = EstateFilter
 
     def get_queryset(self):
         if self.action == 'get_customers':
             return Customer.objects.filter(customer_status=Customer.CustomerStatus.PROVISIONAL)
         else:
             return Estate.objects.all()
-
 
     def get_serializer_class(self):
         if self.action == "list":
@@ -53,7 +55,6 @@ class EstateViewSet(ModelViewSet):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         building_info_data = serializer.validated_data.get("building_info")
-        estate_certificate_data = serializer.validated_data.get("estate_certificate")
         address_data = serializer.validated_data.get("address")
         estate_data = serializer.validated_data.get("estate")
         customer = estate_data["customer"]
@@ -86,11 +87,6 @@ class EstateViewSet(ModelViewSet):
                 evaluation_standard_id=item.id
             )
 
-        estate_certificate = []
-        for certificate in estate_certificate_data:
-            c = EstateCertificate.objects.create(estate_id=estate.id, **certificate)
-            estate_certificate.append(c)
-
         if "land" in address_data:
             address_data.pop("land")
         if "customer" in address_data:
@@ -110,10 +106,6 @@ class EstateViewSet(ModelViewSet):
 
         data = {
             "building_info": BuildingInfoSerializer(instance=building_info).data,
-            "estate_certificate": EstateCertificateSerializer(
-                instance=estate_certificate,
-                many=True,
-            ).data,
             "address": AddressSerializer(instance=address).data,
             "estate": EstateSerializer(instance=estate).data,
             "purchase_survey": PurchaseSurveySerializer(instance=purchase_survey).data,
@@ -124,10 +116,33 @@ class EstateViewSet(ModelViewSet):
     def get_customers(self, request):
         serializer = GetEstateCustomerSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
-        
-        queryset = get_newest_customer_data(self.get_queryset(), Customer.CustomerStatus.PROVISIONAL, Q(name__contains=serializer.validated_data.get("name")))
+
+        queryset = get_newest_customer_data(
+            self.get_queryset(),
+            Customer.CustomerStatus.PROVISIONAL,
+            Q(name__contains=serializer.validated_data.get("name")))
         data = {
             "customers": EstateCustomerDataSerializer(queryset, many=True).data
         }
         return JsonResponse(data=data)
-        
+
+    def get_permissions(self):
+        if self.action == "destroy":
+            permission_classes = [IsSuperUser]
+        else:
+            permission_classes = [IsGeneralUser]
+        return [permission() for permission in permission_classes]
+
+    @action(detail=True, methods=["POST"])
+    def get_provisional_customer(self, request, pk):
+        estate = self.get_object()
+        data = {
+            "provisional_customer":
+                estate.customer.provisional_customer.id,
+            "customer_name":
+                estate.customer.customer_data.first().name,
+            "customer_status": ProvisionalCustomerData.Status(
+                estate.customer.provisional_customer.provisional_customer_data.first().status
+            ).name
+        }
+        return JsonResponse(data=data)

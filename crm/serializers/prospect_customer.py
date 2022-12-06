@@ -40,7 +40,7 @@ class ListProspectCustomerSerializer(serializers.ModelSerializer):
         customer = instance.customer
         latest_customer_data = instance.customer.customer_data.latest("created_at")
         prospect_customer_data = instance.prospect_customer_data.latest("created_at")
-        rep["kana"] = latest_customer_data.kana
+        rep["cellphone_no"] = latest_customer_data.cellphone_no
         rep["name"] = latest_customer_data.name
         rep["prefecture"] = prospect_customer_data.prefecture
         rep["created_by"] = customer.created_by.name

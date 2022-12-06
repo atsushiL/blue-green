@@ -13,7 +13,7 @@ class EvaluationStandardViewSet(ModelViewSet):
 
         estates = Estate.objects.all()
         for estate in estates:
-            purchase_survey = PurchaseSurvey.objects.get(estate_id=estate.id)
+            purchase_survey = PurchaseSurvey.objects.filter(estate_id=estate.id).latest("created_at")
             # 結果承認の場合、追加しない
             if purchase_survey.result is None:
                 EvaluationResult.objects.create(

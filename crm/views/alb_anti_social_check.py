@@ -4,10 +4,8 @@ from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.permissions import IsAuthenticated
 from crm.models import ALBAntiSocialCheck
-from crm.serializers.alb_anti_social_check import ALBAntiSocialCheckSerializer
 from crm.permission import (
     IsGeneralUser,
-    IsSuperUser,
 )
 from crm.serializers.alb_anti_social_check import (
     ALBAntiSocialCheckSerializer,
@@ -89,11 +87,10 @@ class ALB_Anti_Social_CheckViewSet(ModelViewSet):
                 "account_overview": account_overview,
                 "balance": balance,
                 "new_appraisal_loan_date": new_appraisal_loan_date,
-                "exclusion_clause": row[5],
-                "anti_social_confirmation_date": row[6],
-                "anti_social_confirmation_reason": row[7],
-                "response_policy": row[8],
-                "receipt_date": row[9],
+                "anti_social_confirmation_date": row[5],
+                "anti_social_confirmation_reason": row[6],
+                "response_policy": row[7],
+                "receipt_date": row[8],
                 "created_by":request.user.id
             }
             serializer = ALBAntiSocialCheckSerializer(data=csv_data)
@@ -113,10 +110,8 @@ class ALB_Anti_Social_CheckViewSet(ModelViewSet):
             return Response({"msg":f"CSVファイルの{msg}行目のアップロードに失敗しました"},status=status.HTTP_400_BAD_REQUEST)
 
     def get_permissions(self):
-        if self.action in ["create", "update", "partial_update"]:
+        if self.action in ["create", "update", "partial_update", "destroy"]:
             permission_classes = [IsGeneralUser]
-        elif self.action == "destroy":
-            permission_classes = [IsSuperUser]
         else:
             permission_classes = [IsAuthenticated]
         return [permission() for permission in permission_classes]

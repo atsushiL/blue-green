@@ -1,13 +1,13 @@
 from rest_framework import serializers
-from crm.models import EstateCertificate
+from crm.models import LandCertificate
 
 
-class EstateCertificateSerializer(serializers.ModelSerializer):
+class LandCertificateSerializer(serializers.ModelSerializer):
     class Meta:
-        model = EstateCertificate
+        model = LandCertificate
         fields = "__all__"
         read_only_fields = [
-            "estate",
+            "land",
             "created_at",
             "created_by",
         ]

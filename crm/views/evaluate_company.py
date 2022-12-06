@@ -1,7 +1,8 @@
 from rest_framework.viewsets import ModelViewSet
 from django.http import JsonResponse
+from django_filters.rest_framework import DjangoFilterBackend
 
-
+from crm.filters import EvaluateCompanyFilter
 from crm.serializers.evaluate_company import EvaluateCompanySerializer
 from crm.models import Estate, EvaluateCompany, EvaluateCompanyEvaluations
 from crm.permission import IsGeneralUser, IsSuperUser
@@ -10,6 +11,9 @@ from crm.permission import IsGeneralUser, IsSuperUser
 class EvaluateCompanyViewSet(ModelViewSet):
     queryset = EvaluateCompany.objects.all()
     serializer_class = EvaluateCompanySerializer
+    filter_backends = (DjangoFilterBackend,)
+    filterset_class = EvaluateCompanyFilter
+
 
     def list(self, request, *args, **kwargs):
         """

@@ -16,18 +16,16 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get("SECRET_KEY")
+SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG') == "True"
+DEBUG = os.environ.get('DEBUG_FLAG') == "True"
 
 ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS").split(" ")
-
 
 # Application definition
 
@@ -81,7 +79,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "ag_smile_leaseback_crm_back.wsgi.application"
 
-
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
@@ -97,7 +94,6 @@ DATABASES = {
         "PORT": os.environ.get("MYSQL_PORT", "3306"),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -117,7 +113,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
@@ -129,7 +124,6 @@ TIME_ZONE = "Asia/Tokyo"
 USE_I18N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
@@ -161,19 +155,19 @@ SPECTACULAR_SETTINGS = {
 
 AUTH_USER_MODEL = "crm.User"
 
-# ユーザー登録token有効期間１日
+# ユーザー登録token有効期間24時間
 VERIFY_USER_TOKEN_EXPIRE = 60 * 60 * 24
 # パスワードリセットtoken有効期間30分
 PASSWORD_RESET_TOKEN_EXPIRE = 60 * 30
 
-SESSION_COOKIE_AGE = 60 * 60 * 9 # 9時間 - セッション時間は自動的に伸ばす。
+SESSION_COOKIE_AGE = 60 * 60 * 2  # 2時間 - セッション時間は自動的に伸ばす。
 SESSION_SAVE_EVERY_REQUEST = True
 
 # CORSの設定
 CORS_ORIGIN_ALLOW_ALL = False
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOWED_ORIGINS = (os.environ.get("TRUSTED_ORIGINS").split(" "))
-CORS_PREFLIGHT_MAX_AGE = 60 * 30 #30分だけ
+CORS_PREFLIGHT_MAX_AGE = 60 * 30  # 30分だけ
 
 if DEBUG:
     EMAIL_HOST = 'mail'
@@ -184,33 +178,31 @@ if DEBUG:
 
     SESSION_COOKIE_SAMESITE = 'Strict'
     SESSION_COOKIE_SECURE = False
-    SESSION_COOKIE_HTTPONLY = False
     CSRF_COOKIE_SAMESITE = 'Strict'
     CSRF_COOKIE_SECURE = False
-    CSRF_COOKIE_HTTPONLY = False
+    SESSION_COOKIE_HTTPONLY = True
     CSRF_TRUSTED_ORIGINS = ['http://localhost', 'http://127.0.0.1']
     USE_X_FORWARDED_HOST = True
 else:
-    #メールの設定
+    # メールの設定
     EMAIL_BACKEND = 'django_ses.SESBackend'
     AWS_SES_REGION_NAME = os.environ.get("AWS_SES_REGION_NAME")
     AWS_SES_REGION_ENDPOINT = os.environ.get("AWS_SES_REGION_ENDPOINT")
     DEFAULT_FROM_EMAIL = os.environ.get("DEFAULT_FROM_EMAIL")
 
-    #クッキーとCSRFの設定
+    # クッキーとCSRFの設定
     SESSION_COOKIE_SAMESITE = 'None'
     SESSION_COOKIE_SECURE = True
-    SESSION_COOKIE_HTTPONLY = False
     CSRF_COOKIE_SAMESITE = 'None'
     CSRF_COOKIE_SECURE = True
-    CSRF_COOKIE_HTTPONLY = False
-    CSRF_TRUSTED_ORIGINS = os.environ.get("TRUSTED_ORIGINS").split(" ")
+    SESSION_COOKIE_HTTPONLY = True
     CSRF_COOKIE_DOMAIN = os.environ.get("CSRF_COOKIE_DOMAIN")
+    CSRF_TRUSTED_ORIGINS = os.environ.get("TRUSTED_ORIGINS").split(" ")
 
-    #AWS S3の設定
+    # AWS S3の設定
     DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
     STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
-    AWS_STORAGE_BUCKET_NAME = "ag-leaseback-crm-stg-img"
+    AWS_STORAGE_BUCKET_NAME = os.environ.get("AWS_STORAGE_BUCKET_NAME")
 
 MEDIA_URL = '/upload/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'upload')

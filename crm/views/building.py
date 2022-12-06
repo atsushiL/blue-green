@@ -13,10 +13,8 @@ from crm.models import (
 )
 from django.db import transaction
 from django.http import JsonResponse
-from rest_framework import status
 from django.shortcuts import get_object_or_404
 from crm.serializers.building_info import BuildingInfoSerializer
-from crm.serializers.estate_certificate import EstateCertificateSerializer
 from crm.serializers.address import AddressSerializer
 from django.forms import model_to_dict
 
@@ -65,10 +63,6 @@ class BuildingViewSet(ModelViewSet):
 
         data = {
             "building_info": BuildingInfoSerializer(instance=building_info).data,
-            "estate_certificate": EstateCertificateSerializer(
-                instance=estate_certificate,
-                many=True,
-            ).data,
             "address": AddressSerializer(instance=address).data,
         }
         return JsonResponse(data=data)
@@ -127,9 +121,6 @@ class BuildingViewSet(ModelViewSet):
                 instance=BuildingInfo.objects.create(
                     created_by=request.user, **building_info
                 )
-            ).data,
-            "estate_certificate": EstateCertificateSerializer(
-                instance=new_estate_certificate, many=True
             ).data,
             "address": AddressSerializer(
                 instance=Address.objects.create(**address)

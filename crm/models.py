@@ -621,17 +621,9 @@ class LandData(models.Model):
         NO_HOLDER = 1
         SHARE = 2
 
-    class LandMark(models.IntegerChoices):
-        BUILDING_LOT = 0
-        RICE_FIELD = 1
-        FIELD = 2
-        FOREST = 3
-        HYBRID = 4
-
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     land = models.ForeignKey(Land, on_delete=models.CASCADE, related_name="land_data")
     registered_size_square = models.DecimalField(max_digits=6, decimal_places=2)
-    lot_no = models.CharField(max_length=30)
     landmark = models.PositiveIntegerField(
         choices=LandMark.choices, default=LandMark.BUILDING_LOT
     )
@@ -656,13 +648,9 @@ class LandCertificate(models.Model):
     land = models.ForeignKey(
         Land, on_delete=models.CASCADE, related_name="land_certificate"
     )
-    photo = models.CharField(max_length=2083)
+    photo = models.FileField(upload_to="land")
     created_at = models.DateTimeField(auto_now_add=True)
-    created_by = models.ForeignKey(
-        User, on_delete=models.DO_NOTHING, related_name="land_certificate_created_by"
-    )
-    updated_at = models.DateTimeField(auto_now=True)
-    updated_by = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+    created_by = models.ForeignKey(User, on_delete=models.DO_NOTHING)
 
     class Meta:
         db_table = "LandCertificate"
@@ -754,15 +742,15 @@ class BuildingInfo(models.Model):
     direction = models.CharField(max_length=20)
     front_road = models.DecimalField(max_digits=6, decimal_places=2)
     nearest_station = models.CharField(max_length=255, null=True)
-    house_no = models.CharField(max_length=255, null=True)
+    building_no = models.CharField(max_length=255, null=True)
     holder = models.CharField(max_length=255, null=True)
     holder_type = models.PositiveSmallIntegerField(
         choices=HolderType.choices, default=HolderType.SELF, null=True
     )
     fire_insurance_fee = models.PositiveIntegerField(default=0, null=True)
-    fire_insurance_renewal_date = models.DateTimeField(null=True)
+    fire_insurance_renewal_date = models.DateField(null=True)
     property_tax = models.PositiveIntegerField(default=0, null=True)
-    property_tax_pay_date = models.DateTimeField(null=True)
+    property_tax_pay_date = models.DateField(null=True)
     is_available = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
     created_by = models.ForeignKey(User, on_delete=models.DO_NOTHING)
@@ -809,8 +797,9 @@ class EstateCertificate(models.Model):
     estate = models.ForeignKey(
         Estate, on_delete=models.CASCADE, related_name="estate_certificate"
     )
-    photo = models.CharField(max_length=2083)
+    photo = models.FileField(upload_to="estate")
     created_at = models.DateTimeField(auto_now_add=True)
+    created_by = models.ForeignKey(User, on_delete=models.DO_NOTHING)
 
     class Meta:
         db_table = "EstateCertificate"
@@ -1124,7 +1113,6 @@ class EvaluateCompanyEvaluations(models.Model):
     status = models.PositiveIntegerField(
         choices=Status.choices, default=Status.UNTOUCHED
     )
-    memo = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     created_by = models.ForeignKey(
         User,
@@ -1231,7 +1219,6 @@ class ALBAntiSocialCheck(models.Model):
     account_overview = models.CharField(max_length=255, blank=True)
     balance = models.CharField(max_length=255, blank=True)
     new_appraisal_loan_date = models.CharField(max_length=255, blank=True)
-    exclusion_clause = models.CharField(max_length=255)
     anti_social_confirmation_date = models.CharField(max_length=255, blank=True)
     anti_social_confirmation_reason = models.TextField(blank=True)
     response_policy = models.TextField(blank=True)

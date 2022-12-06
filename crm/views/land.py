@@ -11,7 +11,10 @@ from django.shortcuts import get_object_or_404
 
 
 class LandViewSet(BaseViewSet):
-    queryset = Land.objects.all()
+
+    def get_queryset(self):
+        estate = get_object_or_404(Estate, id=self.kwargs["estate_pk"])
+        return Land.objects.filter(customer_id=estate.customer_id)
 
     def get_serializer_class(self):
         if self.action == "list":

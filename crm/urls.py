@@ -1,6 +1,7 @@
 from django.urls import path, include
 from rest_framework_nested import routers
 from crm.views.estate_certificate import EstateCertificateViewSet
+from crm.views.land_certificate import LandCertificateViewSet
 from crm.views.login import LoginViewSet
 from crm.views.user import UserViewSet
 from crm.views.evaluation_standard import EvaluationStandardViewSet
@@ -66,7 +67,9 @@ estate_router.register(
 estate_router.register(
     r"evaluation_result", EvaluationResultViewSet, basename="evaluation_result"
 )
-
+estate_router.register(
+    r"land_certificate", LandCertificateViewSet, basename="land_certificate"
+)
 router.register(
     r"prospect_customers", ProspectCustomerViewSet, basename="prospect_customers"
 )
